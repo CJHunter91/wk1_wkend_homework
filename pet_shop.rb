@@ -25,7 +25,7 @@ def stock_count(pet_shop)
 end
 
 def pets_by_breed(pet_shop, breed)
-  breed_array = []
-  pet_shop[:pets].each{|x| breed_array << breed if x[:breed] == breed}
-  return breed_array
+  pet_shop[:pets].map{|x| x[:breed] == breed ? x : nil}.compact()
+
 end
+

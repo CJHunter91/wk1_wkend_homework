@@ -55,9 +55,13 @@ end
 
 def sell_pet_to_customer(pet_shop, pet, customer)
   if (customer_can_afford_pet(customer, pet))
+    #remove customer cash
     customer[:cash] -= pet[:price]
+    #add/remove cash to till/shop
     add_or_remove_cash(pet_shop, pet[:price])
+    #add pet to customer
     add_pet_to_customer(customer, pet)
+    #increase the number of pets sold by the shop
     increase_pets_sold(pet_shop, 1)
   end
 end

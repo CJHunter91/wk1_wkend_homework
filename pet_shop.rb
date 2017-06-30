@@ -23,3 +23,9 @@ end
 def stock_count(pet_shop)
   return pet_shop[:pets].size
 end
+
+def pets_by_breed(pet_shop, breed)
+  breed_array = []
+  pet_shop[:pets].each{|x| breed_array << breed if x[:breed] == breed}
+  return breed_array
+end

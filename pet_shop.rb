@@ -30,4 +30,5 @@ end
 
 def find_pet_by_name(pet_shop, name)
   pet_shop[:pets].each{|x| return x if  x[:name] == name}
+  return nil
 end
